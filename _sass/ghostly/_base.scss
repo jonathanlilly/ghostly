@@ -31,19 +31,19 @@ a.nav {font-size: $navsize; text-transform: $navtransform}
 a, a:visited {text-decoration: none; color: $linkcolor}
 a.nav, a.media, footer, footer a, footer a:visited, footer p {color: $deemphasis}
 a.current {text-decoration: $activenav;color: $linkcolor}
-a:hover, a.nav:hover, a.media:hover, footer a:hover {color: $accent}  
+a:hover, a.nav:hover, a.media:hover, footer a:hover {color: $accent}
 
 //ol:first-child,ul:first-child,
 // lists and list elements
 ol,ul {list-style-position:inside}
-ol {list-style-type: decimal} 
-ul {list-style-type: none} 
+ol {list-style-type: decimal}
+ul {list-style-type: none}
 article ul {list-style: circle}
 article ul, article ol {padding:0.5ex 2em 0.5ex 2em}
 li {padding-bottom: 1ex}
 ul.tight > li, div {padding-bottom: 0ex}
 
-// First child / last child rules 
+// First child / last child rules
 a.nav:nth-child(2), a.media:first-child {padding-left:0} //For left-aligned headers/footers
 a.nav:last-child, a.media:last-child {padding-right:0}  //For right-aligned headers/footers
 article:first-child {padding-top:0}
@@ -51,7 +51,7 @@ article:last-child {padding-bottom:0;margin-bottom:0}
 
 //To reverse-number ordered lists
 // JML note that flexbox is not supported by IE, see https://net-insider.co.uk/css-flexbox-in-2019/ also https://caniuse.com/#search=flexbox.  That's 2% of global usage
-ol.reverse {display: flex; flex-direction: column-reverse} 
+ol.reverse {display: flex; flex-direction: column-reverse}
 
 //Posts
 p.date {font-size: medium; padding:0;margin:0;font-style:italic;color: $linkcolor}
@@ -76,9 +76,9 @@ blockquote {padding:0ex 2em 0.5ex 2em;margin:0}
 div#mc_embed_signup {background-color: $deemphasis;margin-bottom:2ex}
 input.form {font-size:large; font-family: $textfont;margin-top:100ex;margin-bottom:1ex;text-align: $headeralign;color: $linkcolor}
 input.button#mc-embedded-subscribe {font-size:large; font-family: $textfont;background-color:$linkcolor;padding:0ex 1.5ex 0 1.5ex;letter-spacing: $normal}
-input.button#mc-embedded-subscribe:hover {background-color:black} 
+input.button#mc-embedded-subscribe:hover {background-color:black}
 
-// Lightbox 
+// Lightbox
 .lb-data .lb-caption {font-size:medium; color: $deemphasis;line-height:1.3;font-family: $textfont;font-weight:normal}
 .lb-data .lb-number {font-size:small; color: $deemphasis;line-height:1.3;font-family: $textfont;font-weight:normal;font-style:italic}
 .lb-data .lb-details {width: 95%}
@@ -88,7 +88,8 @@ input.button#mc-embedded-subscribe:hover {background-color:black}
 .imagetitle {text-align: $figtitlealign}
 
 // Commentbox
-div.commentbox {font-family: $textfont; border-top: solid 2px $deemphasis;margin:4ex 0 2ex 0;padding-top:1ex;font-size:large}
+div.commentbox {border-top: solid 2px $deemphasis;margin:4ex 0 2ex 0;padding-top:1ex;font-size:large}
+
 //Fade transitions -- important to apply only for screen media (& not for print)
 @media only screen {
     /* make keyframes that tell the start state and the end state of our object */
@@ -111,5 +112,3 @@ div.commentbox {font-family: $textfont; border-top: solid 2px $deemphasis;margin
         animation-duration:2s
         }
 }
-
-

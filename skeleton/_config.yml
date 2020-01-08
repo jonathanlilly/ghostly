@@ -12,7 +12,7 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 #
-# If you need help with YAML syntax, here are some quick references for you: 
+# If you need help with YAML syntax, here are some quick references for you:
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 #
@@ -26,18 +26,18 @@
 title: j.m. lilly
 author: Jonathan M. Lilly
 description: >- # this means to ignore newlines until "baseurl:"
-  The research website of Jonathan M. Lilly. 
+  The research website of Jonathan M. Lilly.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://jmlilly.net" # the base hostname & protocol for your site
 
 # The order to list your pages in the nav bar, separated by single spaces
-# The first element is whatever you would like index.html to be called 
-# All others refer to files with the ".md" extension in your base directory 
+# The first element is whatever you would like index.html to be called
+# All others refer to files with the ".md" extension in your base directory
 pageorder: "home blog publications software data talks course vita"
 # The order to list social media in the footer, separated by single spaces
 socialorder: "email github googlescholar twitter researchgate"
 
-# Contact and social media information ... comment out what you don't have 
+# Contact and social media information ... comment out what you don't have
 email: eponym@jmlilly.net
 twitter_username: jmlilly
 github_username:  jonathanlilly
@@ -47,8 +47,8 @@ googlescholar_id: os-j4rIAAAAJ
 # e.g. https://scholar.google.com/citations?user=os-j4rIAAAAJ&hl=en
 mailchimp_username: jmlilly #Whatver you log in with
 mailchimp_user_id: 5c78995e12e1229e3cf788002
-mailchimp_audience_id: b3df7d8423  
-# To find your mailchimp IDs is to go to Create > Signup Form > Embedded Form, 
+mailchimp_audience_id: b3df7d8423
+# To find your mailchimp IDs is to go to Create > Signup Form > Embedded Form,
 # then look for a string like u=5c78995e12e1229e3cf788002&amp;id=b3df7d8423
 # Your user ID is between "u=" and "&amp", and the audience ID is after "id="
 # If the form doesn't work, compare your code with that in mailchimp.html
@@ -59,14 +59,14 @@ theme: ghostly
 ghostly:
   date_format: "%B %-d, %Y" # Corresponds to e.g. January 1, 2020
   # see http://shopify.github.io/liquid/filters/date/ for customization
-  backbutton: <a href="javascript:history.back()">{&xlarr; Back}</a> 
+  backbutton: <a href="javascript:history.back()">{&xlarr; Back}</a>
   morebutton: "&xrarr;" # Styling for back and more buttons respectively
-  linkwrapping: true #Enable default Ghostly behavior of wrapping 
+  linkwrapping: true #Enable default Ghostly behavior of wrapping
   # html links in braces {} and others (e.g. to pdfs) in brackets []
   blogsymbol: <span>&xodot;</span> # Symbol to return from post to blog page
-  # Note that in the above html code, no spaces are allow around the ":"s 
+  # Note that in the above html code, no spaces are allow around the ":"s
   itemseparator: "|" # Symbol to separate items in horizontal lists
-  
+
 # Enable Google Analytics
 # See https://support.google.com/analytics/answer/1008080?hl=en to find your ID
 google_analytics: UA-361324-2
@@ -81,9 +81,9 @@ keep_files: [Readme.md, course, doc, figures, images, papers, talks, videos, .gi
 # The following values won't need to be changed unless you modify Ghostly
 
 # Set kramdown to globally parse within html tags
-# See https://kramdown.gettalong.org/syntax.html 
+# See https://kramdown.gettalong.org/syntax.html
 kramdown:
-    parse_block_html: true    
+    parse_block_html: true
 
 plugins:
   - jekyll-feed # For generating a feed of blog posts
@@ -95,7 +95,8 @@ plugins:
 exclude:
    - minima
    - ghostly/skeleton
-   
+   - Ghostly-make-skeleton.sh #bash shell I use for copying files for skeleton
+
 # This paragraph is reproduced from Jekyll's default Minima theme
 ##################################################################
 # The following items will not be processed, by default
@@ -117,5 +118,3 @@ exclude:
 #   - vendor/gems/
 #   - vendor/ruby/
 ##################################################################
-
-
