@@ -1,6 +1,9 @@
 <!-- Navigate over blog items being pages or posts as the case may be -->
 <!-- Requires navigate-in-category.rb -->
 
+<!-- Don't show the blog navivation if there is only one post -->
+{%- if item.previous_in_category != nil or item.next_in_category != nil -%}
+
 <div style="float:left;width:25%" class="blognav">
     {%- if item.previous_in_category != nil -%}
         <a href="{{ item.previous_in_category.url }}">&xlArr;</a><!--Next -->
@@ -9,7 +12,7 @@
     {%- endif -%}
 </div>
 <div style="float:left;width:50%;align:center;text-align:center" class="blognav">
-    {%- if page.url contains "/homepage/" or page.url == "/" -%}
+    {%- if item.url contains "/homepage/" or item.url == "/" or item.categories[0] == "blog" or item.categories[0] == "homepage" -%}
         <a href="/index.html" style="text-align:center">&nbsp;{{ site.ghostly.blogsymbol }}&nbsp;</a>
     {%- elsif page.url contains "/blog/" -%}
         <a href="/blog.html" style="text-align:center">&nbsp;{{ site.ghostly.blogsymbol }}&nbsp;</a>
@@ -22,3 +25,5 @@
         <a href="{{ item.first_in_category.url }}">&xrArr;</a><!--Latest-->
     {%- endif -%}
 </div>
+
+{%- endif -%}

@@ -10,6 +10,7 @@ source "https://rubygems.org"
 gem "jekyll", "~> 4.0.0"
 #gem "minima", "~> 2.5" #if using Minima as a Gem-based theme
 gem "ghostly", path: './ghostly'  
+gem 'html-proofer' #for link checking 
 
 # This specifies a local path for ghostly, so you can edit it
 # Installing as a gem via 'gem "ghostly"' would place the layout files 
