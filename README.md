@@ -285,7 +285,7 @@ Then, a [Jekyll plugin](https://ajclarkson.co.uk/blog/jekyll-category-post-navig
 
 You could of course easily disable the home page blog if you prefer to have static content.
 
-Jekyll has two ways of keeping track of posts, [categories and tags](https://jekyllrb.com/docs/posts/#categories-and-tags). Since the categories are here employed to implement the double blog, it would be better to use tags for your organization.  Also, nothing prevents one from labelling the same post both `homepage` and `blog`, but you probably don't want the same post showing up in two different places.  
+Jekyll has two ways of keeping track of posts, [categories and tags](https://jekyllrb.com/docs/posts/#categories-and-tags). Since the categories are here employed to implement the double blog, it would be better to use tags for your organization.  If you happen to need to use multiple categories on the same posts, make sure that either "`blog`" or "`homepage`" is the first category listed.  Labelling the same post both "`homepage`" and "`blog`", in order to have the same post showing up in two different places, won't work with the way the double blog is implemented.
 
 ### Commenting via CommentBox
 
