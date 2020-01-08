@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " en " }}">
+
+{%- include head.html -%}
+
+<body>
+    {%- include header.html -%}
+    <main>
+        <div class="content fade-in">
+             {{ content }}
+             {%- if site.commentbox_id -%}  
+                    {%- if page.commentbox -%}
+                        <div class="commentbox"></div>
+                    {%- endif -%}
+             {%- endif -%}
+        </div>
+    </main>
+    {%- include footer.html -%}
+    
+    {%- if site.ghostly.linkwrapping -%}
+        {%- include linkwrapping.html -%}
+    {%- endif -%}
+    
+    <!--  Lightbox Javascript -->
+    {%- if page.lightbox -%}
+    <script>
+        lightbox.option({
+            'fitImagesInViewport': true,
+            'wrapAround': true,
+            'alwaysShowNavOnTouchDevices': true,
+            'FadeDuration': 2000,
+            'imageFadeDuration': 200,
+            'resizeDuration': 500
+        })
+    </script> 
+    {%- endif -%}
+    
+    <!-- Mailchimp Javascript -->
+    {%- if page.name contains 'subscribe' -%}  
+        <script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>    
+    {%- endif -%}
+    
+    <!-- Commentbox Javascript -->
+    {%- if site.commentbox_id -%}  
+        {%- if layout.commentbox or page.commentbox -%}  
+            <script type='text/javascript' async>
+                commentBox('{{ site.commentbox_id }}');
+            </script>
+        {%- endif -%}
+    {%- endif -%}
+    </body>
+</html>

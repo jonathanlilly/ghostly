@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <!-- Don't show header for homepage category posts -->
+    {%- if page.categories[0] == "homepage" -%} 
+        {%- assign headerflag = "hidden" -%}
+    {%- else -%}
+        {%- assign headerflag = "visible" -%}
+    {%- endif -%}
+    <header {{ headerflag }} >
+        <h3>{{ page.title }}</h3>
+    <p class="date">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        <i>{{ page.date | date: site.ghostly.date_format }} </i>
+      </time>
+     </p>
+  </header>
+
+  <!-- posts are linked to the next and prev of others in the two categories -->
+  <div itemprop="articleBody">
+    {{ content }}
+    {%- assign item = page -%}
+    {%- include blognavigation.html -%} 
+  </div>
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>  <!-- ? -->
+ 
+  <!-- Commentbox Div -->
+  {%- if site.commentbox_id and post.commentbox -%} 
+     {%- if page.url != "/" -%} 
+        <div class="commentbox"></div>
+     {%- endif -%}
+  {%- endif -%}
+</article>
+
+

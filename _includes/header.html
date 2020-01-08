@@ -1,0 +1,27 @@
+<header class="site-header" role="banner">
+    <h1> {{site.title}} </h1>
+    {%- assign names = site.pageorder | split: " " -%}    
+    {%- for name in names -%}
+        {%- assign filename = name | replace: names[0],"index" -%}
+        {%- assign style = "nav" -%}  
+        {%- if page.name contains filename -%}
+            {%-    assign style = "nav current" -%}
+        {%- endif -%}
+        <!-- highlight home in nav when viewing homepage category posts -->
+        {%- if page.url contains "/homepage/" -%}
+            {%- if name == "home" -%}
+                {%- assign style = "nav current" -%}    
+            {%- endif -%}
+        {%- endif -%}
+        <!-- highlight blog in nav when viewing blog category posts -->
+        {%- if page.url contains "/blog/" -%}
+            {%- if name == "blog" -%}
+                {%- assign style = "nav current" -%}    
+            {%- endif -%}
+        {%- endif -%}
+        {%- if name != "home" -%}
+            {{ site.ghostly.itemseparator }}
+        {%- endif -%}
+        <a class="{{ style }}" href="/{{ filename }}.html">{{ name }}</a>
+    {%- endfor -%}
+</header>

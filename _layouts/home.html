@@ -1,0 +1,30 @@
+---
+layout: default
+commentbox: true
+---
+
+<!--Find the first post in the homepage category, and link to the next and prev-->
+
+{%- assign post = site.categories.homepage[0] -%}
+<article itemscope itemtype="http://schema.org/BlogPosting">   
+    <header hidden>
+        <h3>{{ post.title }}</h3>
+        <p class="date">
+            <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                <i>{{ post.date | date: site.ghostly.date_format }} </i>
+            </time>
+        </p>
+    </header>
+    <div itemprop="articleBody">
+        {{ post.content }}
+        {%- assign item = post -%}
+        {%- include blognavigation.html -%} 
+    </div>
+    <!-- Commentbox Div -->
+    {%- if site.commentbox_id and post.commentbox -%} 
+       {%- if page.url != "/" -%} 
+         <div class="commentbox"></div>
+      {%- endif -%}
+   {%- endif -%}
+</article>
+

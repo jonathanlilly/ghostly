@@ -1,0 +1,26 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="keywords" content="lilly, jonathan lilly, j.m. lilly, jm lilly, ocean, oceanography, eddy, eddies, wavelet, wavelets">
+  <!-- seo includes setting the title <title>{{ site.title }} </title>-->
+  {%- seo -%}
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}"> 
+  {%- feed_meta -%}
+  {%- if jekyll.environment == 'production' and site.google_analytics -%}
+        {%- include google-analytics.html -%}
+  {%- endif -%}
+  <!-- Included since I plan to use javascript for link modification -->    
+  <script src="/assets/jquery-3.4.1.min.js"> </script>
+  {%- if page.lightbox -%}
+          <script src="/assets/lightbox.js"></script>
+  {%- endif -%}
+  {%- if page.name contains 'subscribe' -%}
+        <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+        <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+  {%- endif -%}
+  {%- if site.commentbox_id -%}  
+        {%- if layout.commentbox or page.commentbox -%}  
+            <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>   
+        {%- endif -%}
+  {%- endif -%}
+</head>

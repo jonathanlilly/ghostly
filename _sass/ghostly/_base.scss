@@ -1,0 +1,115 @@
+// CSS for the Ghostly Jekyll theme by J.M. Lilly
+// Variable values, $linkcolor etc, are set in ghostly.scss
+
+body {background-color: $background;letter-spacing: $normal;font-family:$textfont;line-height: 1.3}
+.centered {text-align: $headeralign}
+.small {font-size:small}
+
+//Main, header, footer, blog nav
+//Took some ideas from Roger Johansson on full-height divs, see http://www.456bereastreet.com/archive/200609/css_frames_v2_fullheight
+main, header, footer {width:100%;clear:both;margin-left:auto; margin-right:auto;text-align: $headeralign;
+    font-size:large;max-width: $textwidth; min-width: $textwidth; color: $deemphasis;padding:0;margin-bottom:0}
+p,ol,ul,div {color:black; font-size: large;text-align: $bodyalign;text-indent:0em;padding:1ex 0 1.5ex 0;margin:0}
+header.site-header {border-bottom: solid 1px $linkcolor;padding:3ex 0 1ex 0;}
+div.content {position:relative;top: 0; left:0;}
+footer {border-top: solid 1px $linkcolor;text-align: $footeralign}
+footer div {padding:2ex 0 5ex 0;font-size:medium; color: $deemphasis;width:auto;text-align: $footeralign}
+footer p {font-size:small; text-align:  $footeralign;padding:1ex 0 0 0;margin:0;font-style: italic;letter-spacing: $normal}
+div.blognav {padding-bottom:1.5ex;padding-top:0ex;margin-top:-0.5ex}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {font-size: large;color: $linkcolor;font-weight: bold;margin:0;text-align:left;padding:1ex 0 0 0}
+h1 {font-size: $titlesize;font-weight: normal;text-align: $headeralign;padding:1ex 0 0.75ex 0;letter-spacing: $verywide;text-transform: $titletransform}
+h2 {letter-spacing: $wide}
+h3 {font-weight:normal;letter-spacing: $wide}
+h4 {font-weight:normal;font-style:italic;text-transform: lowercase}
+
+// Links
+a.nav, a.media, footer, footer a {letter-spacing: $wide}
+a.nav, a.media {padding:0 0.5em 0 0.5em}
+a.nav {font-size: $navsize; text-transform: $navtransform}
+a, a:visited {text-decoration: none; color: $linkcolor}
+a.nav, a.media, footer, footer a, footer a:visited, footer p {color: $deemphasis}
+a.current {text-decoration: $activenav;color: $linkcolor}
+a:hover, a.nav:hover, a.media:hover, footer a:hover {color: $accent}  
+
+//ol:first-child,ul:first-child,
+// lists and list elements
+ol,ul {list-style-position:inside}
+ol {list-style-type: decimal} 
+ul {list-style-type: none} 
+article ul {list-style: circle}
+article ul, article ol {padding:0.5ex 2em 0.5ex 2em}
+li {padding-bottom: 1ex}
+ul.tight > li, div {padding-bottom: 0ex}
+
+// First child / last child rules 
+a.nav:nth-child(2), a.media:first-child {padding-left:0} //For left-aligned headers/footers
+a.nav:last-child, a.media:last-child {padding-right:0}  //For right-aligned headers/footers
+article:first-child {padding-top:0}
+article:last-child {padding-bottom:0;margin-bottom:0}
+
+//To reverse-number ordered lists
+// JML note that flexbox is not supported by IE, see https://net-insider.co.uk/css-flexbox-in-2019/ also https://caniuse.com/#search=flexbox.  That's 2% of global usage
+ol.reverse {display: flex; flex-direction: column-reverse} 
+
+//Posts
+p.date {font-size: medium; padding:0;margin:0;font-style:italic;color: $linkcolor}
+li.post {padding-bottom:0ex;margin-bottom:1ex;border-bottom: solid 0.5px $deemphasis}
+li.post:last-child {margin-bottom:0ex;border:none}
+li.post:first-child, li.post h3:first-child {margin-top:0;padding-top:0}
+
+//For two-column layout
+div.column {float:left; width: 50%;}
+
+//Code highlighting
+pre {padding:0;margin:0;overflow-wrap: normal;word-wrap: break-word;text-justify:left;line-height:1}
+code {font-family: $codefont;font-size:medium;letter-spacing: 0.03em;line-height:1}
+div.highlight {padding:1.5ex 2em 1.5ex 2em;margin-bottom:1ex}
+.highlight {background-color: #E8E8E8} //Overwriting a setting of the github highlighting in _github.scss
+div.small code {font-size:small}
+
+//Blockquotes
+blockquote {padding:0ex 2em 0.5ex 2em;margin:0}
+
+//Mailchimp
+div#mc_embed_signup {background-color: $deemphasis;margin-bottom:2ex}
+input.form {font-size:large; font-family: $textfont;margin-top:100ex;margin-bottom:1ex;text-align: $headeralign;color: $linkcolor}
+input.button#mc-embedded-subscribe {font-size:large; font-family: $textfont;background-color:$linkcolor;padding:0ex 1.5ex 0 1.5ex;letter-spacing: $normal}
+input.button#mc-embedded-subscribe:hover {background-color:black} 
+
+// Lightbox 
+.lb-data .lb-caption {font-size:medium; color: $deemphasis;line-height:1.3;font-family: $textfont;font-weight:normal}
+.lb-data .lb-number {font-size:small; color: $deemphasis;line-height:1.3;font-family: $textfont;font-weight:normal;font-style:italic}
+.lb-data .lb-details {width: 95%}
+.lightboxOverlay {filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);opacity: 0.85}
+
+// Front page
+.imagetitle {text-align: $figtitlealign}
+
+// Commentbox
+div.commentbox {font-family: $textfont; border-top: solid 2px $deemphasis;margin:4ex 0 2ex 0;padding-top:1ex;font-size:large}
+//Fade transitions -- important to apply only for screen media (& not for print)
+@media only screen {
+    /* make keyframes that tell the start state and the end state of our object */
+    @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+    @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+    @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+    .fade-in {
+        opacity:0.03;  /* make things invisible upon start */
+        -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+        -moz-animation:fadeIn ease-in 1;
+        animation:fadeIn ease-in 1;
+
+        -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+        -moz-animation-fill-mode:forwards;
+        animation-fill-mode:forwards;
+
+        -webkit-animation-duration:2s;
+        -moz-animation-duration:2s;
+        animation-duration:2s
+        }
+}
+
+

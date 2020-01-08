@@ -1,0 +1,60 @@
+// CSS for the Ghostly Jekyll theme by J.M. Lilly
+// See /ghostly/_base.scss for the rest
+
+@charset "utf-8";
+
+// Overall width of the site 
+$textwidth: 40em;
+
+// Text alignment centered
+$headeralign:center; $footeralign:center; $bodyalign:justify; $figtitlealign: center;
+
+// Text alignment leftish
+//$headeralign:left; $footeralign: center; $bodyalign:left; $figtitlealign: left;
+
+// The ghostly color scheme
+$background:#F8F8FF; $linkcolor:#666666; $deemphasis:#B8B8B8; $accent:#33AA99; 
+
+// The oceanic color scheme
+//$background:#FCF9FF; $linkcolor:#336699; $deemphasis:#FF9700; $accent:#33AA99; 
+
+// Fonts
+$textfont:Georgia; $codefont:Courier;
+
+//Letter spacing
+$normal:0.06em; $wide:0.1em; $verywide:0.2em;
+
+// Text for title and nav
+$titlesize: x-large; $titletransform: lowercase; 
+$navsize: large; $navtransform: lowercase; $activenav: overline; 
+
+// Import partials
+@import
+  "ghostly/normalize", // css normalize and reset thanks to Elad Shechter, see 
+  "ghostly/reset", // https://medium.com/@elad/normalize-css-or-css-reset-9d75175c5d1e 
+  "ghostly/github",  // Syntax highlighting using the Github color scheme
+  "ghostly/lightbox", // Styling for the lightbox package by Lokesh Dhakar
+  "ghostly/base" // Base styling is last as it overrides some of the others 
+;
+        
+// github.scss is created with rougify style github > _github.scss
+// See https://bnhr.xyz/2017/03/25/add-syntax-highlighting-to-your-jekyll-site-with-rouge.html
+// See https://spsarolkar.github.io/rouge-theme-preview/ for more syntax themes
+
+// Use media queries like this:
+// @include media-query($on-palm) {
+//   .wrapper {
+//     padding-right: $spacing-unit / 2;
+//     padding-left: $spacing-unit / 2;
+//   }
+// }
+
+//@mixin media-query($device) {
+//  @media screen and (max-width: $device) {
+//    @content;
+//  }
+//}
+
+//@mixin relative-font-size($ratio) {
+//  font-size: $base-font-size * $ratio;
+//}
