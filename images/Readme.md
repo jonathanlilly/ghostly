@@ -1,1 +1,1 @@
-These images are for lightbox navigation
+Prev, next, loading, and close images are for lightbox navigation

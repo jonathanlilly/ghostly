@@ -5,6 +5,8 @@ Ghostly is a blog-enabled, text-centered Jekyll theme with a minimal aesthetic a
 
 Ghostly is what I use for my own web site, [jmlilly.net](http://www.jmlilly.net/), and is available for download from [GitHub](https://github.com/jonathanlilly/ghostly).  You could probably modify it into a fully functioning web site for yourself in a matter of hours.  
 
+![Ghostly Screenshot](./images/ghostly-screenshot.jpg)
+
 ## History
 
 In early prehistory, before phones and tablets, you could build your own web site from scratch.  The result was simple and ugly.  Then CSS emerged in all its unwieldy beauty, engendering equal parts hope and despair.
