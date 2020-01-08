@@ -1,28 +1,28 @@
 <footer>
     <div>
-        {%- assign socials = site.socialorder | split: " " -%} 
-        {%- for social in socials-%} 
-            {%- case social -%} 
+        {%- assign socials = site.socialorder | split: " " -%}
+        {%- for social in socials-%}
+            {%- case social -%}
                 {%- when "email" -%}
-                    <a class="media" href="mailto:{{ site.email }}">Email</a> 
+                    <a class="media" href="mailto:{{ site.email }}">Email</a>
                 {%- when "twitter" -%}
-                    <a class="media" href="https://twitter.com/{{ site.twitter_username }}">Twitter</a> 
+                    <a class="media" href="https://twitter.com/{{ site.twitter_username }}">Twitter</a>
                 {%- when "github" -%}
-                    <a class="media" href="https://github.com/{{ site.github_username }}">GitHub</a> 
+                    <a class="media" href="https://github.com/{{ site.github_username }}">GitHub</a>
                 {%- when "researchgate" -%}
-                    <a class="media" href="https://www.researchgate.net/profile/{{ site.researchgate_username }}">ResearchGate</a> 
+                    <a class="media" href="https://www.researchgate.net/profile/{{ site.researchgate_username }}">ResearchGate</a>
                 {%- when "googlescholar" -%}
-                    <a class="media" href="https://scholar.google.com/citations?user={{ site.googlescholar_id }}">Google Scholar</a> 
-            {%- endcase -%} 
+                    <a class="media" href="https://scholar.google.com/citations?user={{ site.googlescholar_id }}">Google Scholar</a>
+            {%- endcase -%}
             {% if forloop.last == true %}
-            <br/> 
-            {%- else -%} 
+            <br/>
+            {%- else -%}
                {{ site.ghostly.itemseparator }}
             {%- endif -%}
         {%- endfor -%}
         {%- if site.mailchimp_username -%}
             Subscribe to my <a href="/subscribe.html" target="_blank">mailing list</a> for updates.
         {%- endif -%}
-        <p>&copy; 2005&mdash;2020 {{ site.author }} {{ site.ghostly.itemseparator }} Powered by <a href="https://jekyllrb.com/">Jekyll</a> using the <a href="https://jekyllrb.com/">Ghostly</a> theme</p>
+        <p>&copy; 2005&mdash;2020 {{ site.author }} {{ site.ghostly.itemseparator }} Powered by <a href="https://jekyllrb.com/">Jekyll</a> using the <a href="https://github.com/jonathanlilly/ghostly">Ghostly</a> theme</p>
     </div>
 </footer>
