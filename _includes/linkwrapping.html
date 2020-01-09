@@ -4,6 +4,6 @@
     $('a[href$="pdf"],a[href$="mp4"],a[href$="zip"],a[href$="gz"],a[href$="mlx"],a[href$="gz"]').prepend('[').append(']');
     // brace rules ... starts with / http or https except ends with pdf, ends with html except when class=nav,
     // starts with mailto or javascript,
-    $('a[href^="/"]:not([href$="pdf"]):not([href$="zip"]):not(.nav),a[href^="http"]:not([href$="pdf"]):not([href$="zip"]),a[href^="https"]:not([href$="pdf"]),[href$="html"]:not(.nav),a[href^="mailto"],a[href^="javascript"]').prepend('{').append('}');
+    $('a[href^="/"]:not([href$="pdf"]):not([href$="zip"]):not(.nav),a[href^="http"]:not([href$="pdf"]):not([href$="zip"]),a[href^="https"]:not([href$="pdf"]):not([href$="zip"]),[href$="html"]:not(.nav),a[href^="mailto"],a[href^="javascript"]').prepend('{').append('}');
     // see https://www.quackit.com/css/selectors/ for an helpful instroduction to css selectors
 </script>
